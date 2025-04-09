@@ -1,4 +1,4 @@
-📖 Quran Audio Hosting Repository
+#### 📖 Quran Audio Hosting Repository
 Stream Quranic recitations directly in your apps/websites—no downloads required!
 
 This repository hosts high-quality MP3 files of Quran recitations, optimized for direct streaming (playback without forcing downloads). Use the links in your projects to embed Quran audio seamlessly.
@@ -9,7 +9,7 @@ Replace [filename].mp3 with the surah/reciter you need:
 
 https://alkarartech.github.io./quran-audio/###.mp3
 
-### << number of the surah
+(### << number of the surah)
 
 Example:
 
