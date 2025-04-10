@@ -1,3 +1,56 @@
-<audio controls>
-  <source src="your-audio.mp3" type="audio/mpeg">
-</audio>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Audio Streaming</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        audio { width: 100%; margin: 10px 0; }
+        select, button { padding: 8px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🎧 Quran Audio Player</h1>
+    <p>Select a reciter and surah to stream:</p>
+
+    <!-- Reciter Dropdown -->
+    <select id="reciter">
+        <option value="maythem-altammar">Maytham Al-Tammar</option>
+        <option value="other-reciter">Another Reciter</option>
+        <!-- Add more reciters here -->
+    </select>
+
+    <!-- Surah Dropdown -->
+    <select id="surah">
+        <option value="001">Surah Al-Fatihah (1)</option>
+        <option value="002">Surah Al-Baqarah (2)</option>
+        <!-- Add more surahs here -->
+    </select>
+
+    <button onclick="playAudio()">Play</button>
+
+    <!-- Audio Player -->
+    <audio id="audioPlayer" controls>
+        Your browser does not support Arabic audio playback.
+    </audio>
+
+    <script>
+        function playAudio() {
+            const reciter = document.getElementById("reciter").value;
+            const surah = document.getElementById("surah").value;
+            const audioPlayer = document.getElementById("audioPlayer");
+
+            // Generate the streaming link
+            const audioUrl = `reciters/${reciter}/${surah}.mp3`;
+            audioPlayer.src = audioUrl;
+            audioPlayer.play();
+        }
+    </script>
+
+    <h2>📂 Direct Links (For Developers)</h2>
+    <p>Use these URLs in your apps (streams in-browser):</p>
+    <code>https://alkarartech.github.io/quran-audio/reciters/[reciter]/[surah].mp3</code>
+    <p>Example: <a href="reciters/maythem-altammar/001.mp3" target="_blank">Maytham Al-Tammar - Surah 1</a></p>
+</body>
+</html>
